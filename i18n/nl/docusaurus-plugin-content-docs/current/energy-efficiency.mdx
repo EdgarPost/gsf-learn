@@ -1,0 +1,216 @@
+---
+sidebar_position: 4
+---
+
+import Quiz from "/src/components/Quiz";
+
+# Energy Efficiency
+
+:::tip Principe
+
+_Gebruik de minst mogelijke hoeveelheid energie._
+
+:::
+
+## Introductie
+
+Energie is het vermogen om werk te verrichten. Er zijn veel verschillende vormen van energie, zoals warmte, elektrische en chemische energie, en één type energie kan worden omgezet in een ander. Bijvoorbeeld, we zetten chemische energie uit kolen om in elektrische energie. Met andere woorden, elektriciteit is secundaire energie die is omgezet uit een ander energietype. Op deze manier kunnen we aan energie denken als een maat voor het elektriciteitsverbruik.
+
+Alle software, van de applicaties die op mobiele telefoons draaien tot de training van Machine Learning-modellen die in datacenters draaien, verbruikt elektriciteit. Een van de beste manieren om het elektriciteitsverbruik en de daaropvolgende carbon emissions van software te verminderen, is om applicaties energie-efficiënter te maken. Maar daar eindigt onze verantwoordelijkheid niet.
+
+Green software practitioners nemen verantwoordelijkheid voor de energie die hun producten verbruiken en ontwerpen ze om zo min mogelijk te verbruiken. We moeten ervoor zorgen dat bij elke stap in het proces zo min mogelijk wordt verspild en dat het grootste deel van de energie naar de volgende stap gaat.
+
+De laatste stap in deze keten wordt vertegenwoordigd door de eindgebruiker van je product, niet het eindproduct zelf. Dit betekent dat ons doel niet simpelweg is om de meest energie-efficiënte code of de "groenste" software te maken, maar om na te denken over de eindgebruiker en hoe we ervoor kunnen zorgen dat zij geen onnodige emissies creëren.
+
+Dit kan betekenen dat jobs worden gebundeld om te profiteren van energy proportionality, of het veranderen van hoe een gebruiker jouw software gebruikt. Laten we kijken naar enkele van deze concepten en enkele manieren waarop je energie-efficiënter kunt worden in elke fase van de keten, tot aan de eindconsument.
+
+![alt_text](./images/03_energy_efficiency.png "image_tooltip")
+
+## Kernconcepten
+
+### Fossiele brandstoffen en high-carbon energiebronnen
+
+De meeste elektriciteit wordt geproduceerd door het verbranden van fossiele brandstoffen, [meestal kolen](https://ourworldindata.org/grapher/world-electricity-by-source). Fossiele brandstoffen worden gemaakt van ontbindende planten en dieren. Deze brandstoffen worden gevonden in de aardkorst en bevatten koolstof en waterstof, die kunnen worden verbrand voor energie. Kolen, olie en aardgas zijn voorbeelden van fossiele brandstoffen.
+
+![alt_text](./images/04_high-carbon_sources.png "image_tooltip")
+
+De meeste mensen denken dat elektriciteit schoon is. Onze handen worden niet vuil als we iets in een stopcontact steken, en onze laptops hebben geen uitlaatpijpen nodig. Echter, aangezien de meeste elektriciteit afkomstig is van het verbranden van fossiele brandstoffen en energievoorziening de [meest significante](https://www.eea.europa.eu/data-and-maps/daviz/change-of-co2-eq-emissions-2#tab-chart_4) oorzaak van carbon emissions is, kunnen we een directe lijn trekken van elektriciteit naar carbon emissions. In deze termen kan elektriciteit worden beschouwd als een proxy voor carbon.
+
+Als ons doel is om carbon efficient te zijn, dan betekent dit dat ons doel ook is om energie-efficiënt te zijn, aangezien energie een proxy is voor carbon. Dit betekent de minst mogelijke hoeveelheid energie gebruiken per eenheid werk.
+
+### Low-carbon energiebronnen
+
+Clean energy komt van hernieuwbare, emissievrije bronnen die de atmosfeer niet vervuilen wanneer ze worden gebruikt en energie besparen door energie-efficiënte praktijken. Er zijn overlappingen tussen clean, green en renewable energy. Hier is hoe we ze van elkaar kunnen onderscheiden:
+
+- **Clean energy** - produceert geen carbon emissions, bijvoorbeeld kernenergie.
+- **Green energy** - bronnen uit de natuur
+- **Renewable energy** - bronnen die niet opraken, bijvoorbeeld zon, wind
+
+### Energiemeting
+
+- Energie wordt gemeten in joules (J), de [SI](https://en.wikipedia.org/wiki/International_System_of_Units) eenheid van energie.
+- Vermogen wordt gemeten in watts, waarbij 1 watt (W) een snelheid is die overeenkomt met één joule per seconde.
+- Een kilowatt (kW) is daarom ook een snelheid die overeenkomt met 1000 joules per seconde.
+- Een kilowattuur (kWh) is een maat voor energie (J) die overeenkomt met één kilowatt vermogen dat gedurende één uur wordt volgehouden.
+
+## Hoe energie-efficiëntie te verbeteren
+
+Nu we weten hoe energie wordt geproduceerd en de bijbehorende kosten in termen van emissies, gebaseerd op of low- of high-carbon energiebronnen worden gebruikt, laten we kijken naar enkele manieren waarop green software practitioners de energie-efficiëntie kunnen verbeteren. Het begrijpen van power usage effectiveness en energy proportionality betekent dat je betere beslissingen kunt nemen in termen van hoe je energie op de meest efficiënte manier mogelijk gebruikt en minder verspilt.
+
+### Power usage effectiveness
+
+De datacenter-industrie gebruikt de [power usage effectiveness](https://datacenters.lbl.gov/sites/default/files/WP49-PUE%20A%20Comprehensive%20Examination%20of%20the%20Metric_v6.pdf) (PUE) metric, ontwikkeld door Green Grid in 2006, om **datacenter energie-efficiëntie te meten**. Specifiek heeft dit betrekking op hoeveel energie de computerapparatuur gebruikt in vergelijking met koeling en andere overheads die de apparatuur ondersteunen. Wanneer de PUE van een datacenter dicht bij 1,0 ligt, gebruikt de computing bijna alle energie. Wanneer de PUE 2,0 is, betekent dit dat er een extra watt IT-vermogen nodig is om de IT-apparatuur te koelen en van stroom te voorzien voor elke watt IT-vermogen die het gebruikt.
+
+Een andere manier om over PUE na te denken is als een vermenigvuldiger voor het energieverbruik van je applicatie. Dus bijvoorbeeld, als je applicatie 10 kWh verbruikte en de PUE van het datacenter waar het draait 1,5 is, dan is het werkelijke verbruik uit het elektriciteitsnet 15 kWh: 5kWh gaat naar de operationele overhead van het datacenter, en 10 kWh gaat naar de servers die je applicatie draaien.
+
+![alt_text](./images/05_power_usage.png "image_tooltip")
+
+### Energy proportionality
+
+[Energy proportionality](https://research.google/pubs/pub33387/), voor het eerst voorgesteld in 2007 door ingenieurs bij Google, meet **de relatie tussen het vermogen dat door een computer wordt verbruikt en de snelheid waarmee nuttig werk wordt gedaan** (zijn utilization).
+
+Utilization meet hoeveel van de middelen van een computer worden gebruikt, meestal gegeven als een percentage. Een volledig benutte computer die op maximale capaciteit draait heeft een hoog percentage, terwijl een inactieve computer zonder gebruik een lager percentage heeft.
+
+De relatie tussen vermogen en utilization is niet proportioneel. Wiskundig gesproken betekent proportionaliteit tussen twee variabelen dat hun verhoudingen equivalent zijn. Bijvoorbeeld, bij 0% utilization kan een computer 100W trekken; bij 50% trekt hij 180W; en bij 100% trekt hij 200W. De relatie tussen stroomverbruik en utilization is niet lineair en kruist de oorsprong niet.
+
+![alt_text](./images/06_energy_proportionality_updated.png "image_tooltip")
+
+Hierdoor wordt de computer, naarmate we hem meer benutten, efficiënter in het omzetten van elektriciteit naar praktische computerbewerkingen. Een manier om hardware-efficiëntie te verbeteren is om de workload op zo min mogelijk servers te draaien, waarbij de servers draaien met het hoogste utilization-percentage, waardoor de energie-efficiëntie wordt gemaximaliseerd.
+
+#### Static power draw
+
+De static power draw van een computer is **hoeveel elektriciteit er wordt verbruikt in een inactieve toestand**. De static power draw varieert per configuratie en hardwarecomponenten, maar alle onderdelen hebben enige static power draw. Dit is een van de redenen dat pc's, laptops en eindgebruikersapparaten energiebesparingsmodi hebben. Als het apparaat inactief is, zal het uiteindelijk een slaapstand activeren en de schijf en het scherm in slaapstand zetten of zelfs de frequentie van de CPU veranderen. Deze energiebesparingsmodi besparen elektriciteit, maar ze hebben andere afwegingen, zoals een langzamere herstart wanneer het apparaat wakker wordt.
+
+Servers zijn meestal niet geconfigureerd voor agressieve of zelfs minimale energiebesparing. Veel use cases die op servers draaien vereisen totale capaciteit zo snel mogelijk omdat de server snel moet reageren op snel veranderende eisen, wat leidt tot veel servers in inactieve modi tijdens perioden met lage vraag. Een inactieve server heeft carbon costs van zowel de embedded carbon als de inefficiënte utilization.
+
+## Samenvatting
+
+- Elektriciteit is een proxy voor carbon, dus het bouwen van een applicatie die energie-efficiënt is, is gelijkwaardig aan het bouwen van een applicatie die carbon efficient is.
+- Green software neemt verantwoordelijkheid voor zijn elektriciteitsverbruik en is ontworpen om zo min mogelijk te verbruiken.
+- Het kwantificeren van het energieverbruik van een applicatie is een stap in de goede richting om na te denken over hoe een applicatie efficiënter kan werken. Het begrijpen van het energieverbruik van je applicatie is echter niet het hele verhaal. De hardware waarop je software draait, gebruikt een deel van de elektriciteit voor operationele overhead. Dit wordt power usage efficiency (PUE) genoemd in de cloud-ruimte.
+- Het concept van energy proportionality voegt nog een laag complexiteit toe, aangezien hardware efficiënter wordt in het omzetten van elektriciteit in nuttige bewerkingen naarmate het meer wordt gebruikt.
+- Het begrijpen hiervan geeft green software practitioners een beter inzicht in hoe hun applicatie zich gedraagt met betrekking tot energieverbruik in de echte wereld.
+
+## Quiz
+
+<Quiz
+  QuizList={[
+    {
+      question:
+        "Waarom zeggen we soms dat elektriciteit een proxy is voor carbon?",
+      answers: [
+        {
+          text: "Elektriciteit is een vorm van energie en alle soorten energie produceren carbon",
+          isCorrect: false,
+        },
+        {
+          text: "Het gebruik van elektriciteit produceert carbon emissions",
+          isCorrect: false,
+        },
+        {
+          text: "Fossiele brandstoffen worden verbrand om elektriciteit te produceren",
+          isCorrect: true,
+        },
+      ],
+    },
+    {
+      question: "Wat zijn enkele voorbeelden van fossiele brandstoffen?",
+      answers: [
+        { text: "Koolstof en waterstof", isCorrect: false },
+        { text: "Kolen, olie en aardgas", isCorrect: true },
+        { text: "Beide bovenstaande", isCorrect: false },
+      ],
+    },
+    {
+      question: "Wat is clean energy?",
+      answers: [
+        { text: "Energie die afkomstig is van hernieuwbare bronnen", isCorrect: false },
+        {
+          text: "Energie die geen carbon emissions produceert",
+          isCorrect: true,
+        },
+        { text: "Beide bovenstaande", isCorrect: false },
+      ],
+    },
+    {
+      question: "Wat meet PUE (power usage effectiveness)?",
+      answers: [
+        { text: "Datacenter energie-efficiëntie", isCorrect: true },
+        { text: "Energieverbruik van een applicatie", isCorrect: false },
+        {
+          text: "Hoeveelheid energie gebruikt in overheads gecombineerd met dat verbruikt door servers",
+          isCorrect: false,
+        },
+      ],
+    },
+    {
+      question:
+        "Welke van de volgende wordt gemeten door energy proportionality?",
+      answers: [
+        {
+          text: "Relatie tussen de energie gebruikt in overheads en wat naar de servers gaat die een applicatie draaien",
+          isCorrect: false,
+        },
+        {
+          text: "Het percentage van de beschikbare middelen van een computer dat wordt gebruikt",
+          isCorrect: false,
+        },
+        {
+          text: "Relatie tussen het vermogen verbruikt door een computer en de snelheid waarmee nuttig werk wordt gedaan",
+          isCorrect: true,
+        },
+      ],
+    },
+    {
+      question: "Wat is de SI-eenheid van energie?",
+      answers: [
+        {
+          text: "Watts",
+          isCorrect: false,
+        },
+        {
+          text: "Kilowatts",
+          isCorrect: false,
+        },
+        {
+          text: "Joules",
+          isCorrect: true,
+        },
+      ],
+    },
+    {
+      question: "Welke applicatie verbruikt de meeste energie?",
+      answers: [
+        {
+          text: "Een applicatie die 20kWh verbruikt in een datacenter met een PUE van 1",
+          isCorrect: true,
+        },
+        {
+          text: "Een applicatie die 15kWh verbruikt in een datacenter met een PUE van 1,2",
+          isCorrect: false,
+        },
+        {
+          text: "Een applicatie die 10kWh verbruikt in een datacenter met een PUE van 1,5",
+          isCorrect: false,
+        },
+      ],
+    },
+    {
+      question: "Wat is static power draw?",
+      answers: [
+        {
+          text: "De carbon cost van applicaties die op standby worden gelaten",
+          isCorrect: false,
+        },
+        {
+          text: "De elektriciteit die door een applicatie wordt verbruikt in een inactieve toestand",
+          isCorrect: true,
+        },
+        {
+          text: "De elektriciteit gebruikt door een applicatie in eco-modus",
+          isCorrect: false,
+        },
+      ],
+    },
+  ]}
+/>

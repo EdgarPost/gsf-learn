@@ -1,0 +1,46 @@
+{
+  "link.title.Links": {
+    "message": "Links",
+    "description": "De titel van de footerkolom met titel=Links in de footer"
+  },
+  "link.title.LEGAL": {
+    "message": "JURIDISCH",
+    "description": "De titel van de footerkolom met titel=LEGAL in de footer"
+  },
+  "link.title.GSF Info": {
+    "message": "GSF Info",
+    "description": "De titel van de footerkolom met titel=GSF Info in de footer"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Het label van de footerlink met label=GitHub die linkt naar https://github.com/Green-Software-Foundation/training/"
+  },
+  "link.item.label.Website": {
+    "message": "Website",
+    "description": "Het label van de footerlink met label=Website die linkt naar https://learn.greensoftware.foundation"
+  },
+  "link.item.label.Trademark Policy": {
+    "message": "Merkbeleid",
+    "description": "Het label van de footerlink met label=Trademark Policy die linkt naar https://greensoftware.foundation/policy/trademark"
+  },
+  "link.item.label.Terms and Privacy Policy": {
+    "message": "Voorwaarden en privacybeleid",
+    "description": "Het label van de footerlink met label=Terms and Privacy Policy die linkt naar https://greensoftware.foundation/policy/terms"
+  },
+  "link.item.label.Green Software Foundation": {
+    "message": "Green Software Foundation",
+    "description": "Het label van de footerlink met label=Green Software Foundation die linkt naar https://greensoftware.foundation"
+  },
+  "link.item.label.Twitter": {
+    "message": "Twitter",
+    "description": "Het label van de footerlink met label=Twitter die linkt naar https://twitter.com/gsfcommunity"
+  },
+  "link.item.label.Linkedin": {
+    "message": "LinkedIn",
+    "description": "Het label van de footerlink met label=Linkedin die linkt naar https://www.linkedin.com/company/green-software-foundation/"
+  },
+  "copyright": {
+    "message": "Copyright © 2024 Joint Development Foundation Projects, LLC, Green Software Foundation Series",
+    "description": "Het footer copyright"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "Green Software Practitioner",
+    "description": "De titel in de navigatiebalk"
+  },
+  "item.label.Take the Course": {
+    "message": "Volg de cursus",
+    "description": "Navigatiebalk-item met label"
+  },
+  "item.label.Green Software Foundation": {
+    "message": "Green Software Foundation",
+    "description": "Navigatiebalk-item met label Green Software Foundation"
+  }
+}

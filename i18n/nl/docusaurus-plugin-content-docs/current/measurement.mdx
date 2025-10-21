@@ -1,0 +1,316 @@
+---
+sidebar_position: 7
+---
+
+import Quiz from "/src/components/Quiz";
+
+# Meting
+
+:::tip Principe
+
+_Wat je niet kunt meten, kun je niet verbeteren._
+
+:::
+
+## Inleiding
+
+Het Greenhouse Gas (GHG) protocol is de meest gebruikte methode voor organisaties om hun totale carbon emissions te meten. Het begrijpen van GHG scopes en hoe je jouw software kunt meten aan de hand van industriestandaarden helpt je te zien in hoeverre je Green Software principes toepast en hoever je nog moet gaan om te verbeteren.
+
+Als aanvulling op het GHG protocol kun je ook de Software Carbon Intensity (SCI) specificatie gebruiken. Terwijl het GHG een meer generieke meting is die geschikt is voor alle soorten organisaties, is de SCI specifiek bedoeld voor het meten van de emissies van software en ontworpen om de eliminatie van die emissies te stimuleren.
+
+Het GHG is een protocol om totale emissies te meten, de SCI is een hulpmiddel om de eliminatie van software-gedreven emissies mogelijk te maken.
+
+We zullen naar elk van de meetmethodologieën kijken en uitleggen hoe je in beide gevallen kunt berekenen.
+
+## Het GHG protocol
+
+Het [Greenhouse Gas protocol](https://ghgprotocol.org) is de meest gebruikte en internationaal erkende standaard voor greenhouse gas accounting. [92%](https://ghgprotocol.org/about-us) van de Fortune 500 bedrijven gebruikt het GHG protocol bij het berekenen en rapporteren van hun carbon emissions.
+
+Het GHG protocol verdeelt emissies in drie scopes:
+
+- **Scope 1**: Directe emissies van **operaties** die eigendom zijn van of worden gecontroleerd door de rapporterende organisatie, zoals brandstofverbranding op locatie of wagenparkvoertuigen.
+- **Scope 2**: Indirecte emissies gerelateerd aan **het genereren van emissies bij aangekochte energie**, zoals warmte en elektriciteit.
+- **Scope 3**: Andere indirecte emissies van alle andere activiteiten waaraan je deelneemt. Inclusief alle **emissies van de supply chain van een organisatie;** zakenreizen voor medewerkers, en de elektriciteit die klanten kunnen verbruiken bij het gebruik van jouw product.
+
+Scope 3, soms aangeduid als value chain emissions, is voor veel organisaties de belangrijkste bron van emissies en de meest complexe om te berekenen. Deze omvatten het volledige scala aan activiteiten die nodig zijn om een product of dienst te creëren, van conceptie tot distributie. In het geval van een laptop bijvoorbeeld, zendt elk gebruikt grondstof carbon uit wanneer het wordt gewonnen en verwerkt. Value chain emissions omvatten ook emissies van het gebruik van de laptop, wat betekent de emissies van de energie die wordt gebruikt om de laptop van stroom te voorzien nadat deze aan een klant is verkocht.
+
+Via deze aanpak is het mogelijk om alle GHG emissies van elke organisatie en persoon in de wereld op te tellen en een wereldwijd totaal te bereiken.
+
+### In welke scope valt mijn applicatie?
+
+We hebben al gezien hoe het GHG protocol ons vraagt om software emissies te categoriseren volgens scopes 1-3. Maar hoe werkt dit als het gaat om software?
+
+De meeste organisaties hebben veel applicaties draaien met verschillende architecturen en in verschillende omgevingen. Als zodanig hangt de scope waarin jouw emissies vallen, zowel in termen van gegenereerde energie als embodied carbon, af van jouw specifieke scenario.
+
+![alt_text](./images/22_scope.png "image_tooltip")
+
+- **Voor cloud applicaties die draaien op servers die je bezit**, valt het energiegebruik van jouw software in scope 2, en de embodied carbon van al je servers valt in scope 3.
+- **Voor cloud applicaties die draaien op een public cloud**, vallen zowel het energiegebruik van jouw applicatie als de embodied carbon in scope 3.
+- In scenario's waar **je een hybride private/public cloud applicatie draait**, zal een deel van de emissies in scope 2 vallen en een deel in scope 3.
+- Evenzo valt voor jouw klantgerichte **front-end applicatie** het energiegebruik in scope 3 van jouw organisatie, omdat jouw klant de energie zal kopen om hun apparaat van stroom te voorzien.
+
+Voor software zijn er, ongeacht of het draait op infrastructuur die je bezit, huurt, of die consumenten bezitten, drie parameters om te overwegen voor het categoriseren van emissies:
+
+- Hoeveel energie het verbruikt
+- Hoe schoon of vuil die elektriciteit is
+- Hoeveel hardware het nodig heeft om te functioneren
+
+### Is het mogelijk om een totaal te berekenen voor software carbon emissions?
+
+Om een totaal voor software carbon emissions te berekenen, heb je toegang nodig tot gedetailleerde data met betrekking tot het energieverbruik, carbon intensity, en hardware waarop jouw software draait. Dit is uitdagende data om te verzamelen, zelfs in het geval van een organisatie's eigen closed-source softwareproducten waar ze het gebruik kunnen volgen met telemetrie of logs.
+
+Open-source software beheerders hebben niet hetzelfde inzicht in hoe en waar hun software wordt gebruikt, hoeveel energie wordt verbruikt, en op welke hardware.
+
+Open-source projecten hebben doorgaans meerdere bijdragers van meerdere organisaties. Als gevolg hiervan is het onduidelijk wie verantwoordelijk zou moeten zijn voor het berekenen van de emissies en wie verantwoordelijk is voor het elimineren ervan. Wanneer je ook overweegt dat open-source software 90% uitmaakt van een typische enterprise stack, is het duidelijk dat er een grote hoeveelheid carbon emissions zal zijn die niet verantwoord wordt.
+
+### Vertellen totalen het hele verhaal?
+
+Een totaal is slechts één metriek die de toestand van iets beschrijft. Om de juiste beslissingen te nemen, moet je naar veel verschillende metrieken kijken.
+
+Stel je een scenario voor waarin je de leider bent van een organisatie en verantwoordelijk bent voor het verminderen van de emissies van jouw software. Je meet de emissies in Q1 en komt uit op een totaal van 34 ton. Na enkele investeringen in projecten die emissies elimineren, ontdek je dat de emissies in Q2 zijn gestegen naar 45 ton. Betekent dit dat jouw inspanningen zijn mislukt?
+
+Niet noodzakelijk. We weten dat een totaal op zichzelf niet het hele verhaal vertelt en dat we naar andere metrieken moeten kijken om erachter te komen of een project voor emissievermindering succesvol is geweest. Als je bijvoorbeeld de carbon intensity meet naast het carbon totaal, kun je tot een ander perspectief komen. In hetzelfde project, als de carbon intensity 3.3g CO2eq/user was in Q1, en 2.9g CO2eq/user in Q2, zou je het project als een succes kunnen beschouwen en verder kunnen blijven investeren.
+
+Terwijl het totaal je liet zien dat de carbon emissions van jouw organisatie over het algemeen waren gestegen, gaf de intensiteit een completer perspectief dat je zou helpen om een beter geïnformeerde beslissing te nemen over hoe verder te gaan.
+
+## Software Carbon Intensity specificatie
+
+De [Software Carbon Intensity (SCI) specificatie](https://grnsft.org/sci) is een methodologie ontwikkeld door de Standards Working Group in de Green Software Foundation, ontworpen om een softwareapplicatie te scoren op een dimensie van duurzaamheid en om actie aan te moedigen richting het elimineren van emissies.
+
+Het is geen vervanging voor het GHG protocol, maar een aanvullende metriek die softwareteams helpt te begrijpen hoe hun software zich gedraagt in termen van carbon emissions, zodat ze beter geïnformeerde beslissingen kunnen nemen. Terwijl het GHG protocol de **totale emissies** berekent, gaat de SCI over het berekenen van de **mate van emissies**. In autotermen is de SCI meer zoals een kilometers per liter meting en het GHG protocol meer zoals de totale carbon footprint van een autofabrikant en al hun auto's die ze elk jaar produceren.
+
+In plaats van de carbon emissions van software te categoriseren in scopes 1-3, categoriseert het ze in **operational emissions** (carbon emissions van het draaien van software) en **embodied emissions** (carbon emissions van de fysieke bronnen die nodig zijn om de software te laten draaien). Het is ook een intensiteit in plaats van een totaal, wat inclusiever is voor open-source software.
+
+Een belangrijk punt om op te merken is dat het niet mogelijk is om jouw SCI score te verlagen door offsets te kopen in de vorm van neutralizations, compensations, of door elektriciteit te compenseren in de vorm van renewable energy credits. Dit betekent dat een organisatie die geen inspanningen levert om hun emissies te verminderen maar simpelweg geld uitgeeft aan carbon credits geen goede SCI score kan behalen.
+
+Offsets zijn een essentieel onderdeel van elke klimaatstrategie; echter, offsets zijn geen eliminaties en worden daarom niet opgenomen in de SCI metriek.
+
+Als je jouw applicatie meer **energy efficient, hardware efficient**, of **carbon aware** maakt, zal jouw SCI score dalen. De enige manier om jouw SCI score te verlagen is door tijd of middelen te investeren in een van die drie principes. Als zodanig zal het adopteren van de SCI als metriek voor jouw softwareapplicatie samen met het GHG protocol, investeringen in een van de drie pijlers van green software stimuleren.
+
+### De SCI vergelijking
+
+De SCI is een methode om elke softwareapplicatie te scoren, niet beperkt tot alleen cloud of alleen end-user applicaties, maar alle soorten applicaties ertussenin. Het biedt een gemeenschappelijke taal om te beschrijven hoe software zich gedraagt met betrekking tot carbon emissions en hoe een voorgestelde wijziging enkele daarvan zou kunnen elimineren.
+
+De vergelijking om een SCI score te berekenen is elegant eenvoudig. Deze eenvoud betekent dat het in een aantal verschillende scenario's kan worden toegepast.
+
+![alt_text](./images/23_SCI.png "image_tooltip")
+
+`SCI = ((E *I) + M) per R`
+
+`E` = Energy consumed by a software system
+`I` = Location-based marginal carbon emissions*
+`M` = Embodied emissions of a software system.*
+`R` = Functional unit (e.g. carbon per additional user, API-call, ML job, etc)
+
+Dit vat samen tot:
+
+`SCI = C per R` (Carbon per `R`)
+
+`R` is het kernkenmerk van de SCI en maakt het een intensiteit in plaats van een totaal. Dit is wat we een _functional unit_ noemen.
+
+## Hoe je jouw SCI score berekent
+
+Volg deze vier stappen om jouw SCI score te berekenen.
+
+1. Besluit wat je wilt opnemen
+
+Welke softwarecomponenten je wilt opnemen of uitsluiten in de SCI score betekent het definiëren van de grenzen van jouw software; waar het begint en waar het eindigt.
+
+Voor elk softwarecomponent dat je opneemt, moet je de impact ervan meten. Voor elk belangrijk component dat je uitsluit, moet je uitleggen waarom.
+
+De SCI specificatie stelt momenteel geen eisen met betrekking tot wat wel en niet op te nemen. Echter, je moet alle ondersteunende infrastructuur en systemen opnemen die significant bijdragen aan de werking van de software.
+
+Jouw SCI score kan dalen omdat je jouw softwaregrens hebt aangescherpt en meer softwarecomponenten hebt uitgesloten. Omgekeerd kan jouw SCI score stijgen omdat je softwarecomponenten opneemt die je eerder had uitgesloten. Daarom is het, wanneer je jouw SCI score rapporteert, vooral eventuele verbeteringen in de score, essentieel om jouw softwaregrens bekend te maken.
+
+2. Kies je functional unit
+
+Zoals we hebben gezien, is de SCI een mate in plaats van een totaal en meet het de intensiteit van emissies volgens de gekozen functional unit. De specificatie schrijft momenteel de functional unit niet voor en je bent vrij om te kiezen wat het beste beschrijft hoe jouw applicatie schaalt. Als jouw applicatie bijvoorbeeld schaalt op basis van het aantal gebruikers, kies dan gebruikers als jouw functional unit.
+
+Toekomstige iteraties van de SCI kunnen specifieke functional units voorschrijven voor verschillende soorten applicaties om vergelijkbaarheid te bevorderen. We kunnen bijvoorbeeld streaming applicaties vragen om minuten als hun functional unit te kiezen om metingen te standaardiseren voor alle streaming applicaties.
+
+3. Besluit hoe je jouw emissies gaat meten
+
+Nu heb je een lijst van de softwarecomponenten die je wilt meten en de functional unit die je gaat gebruiken om ze te meten. De volgende stap is te besluiten hoe je de emissies van elk softwarecomponent gaat kwantificeren.
+
+Er zijn twee methoden van kwantificatie; measurement en calculation.
+
+- **Measurement** is het gebruik van tellers van een bepaalde vorm. Bijvoorbeeld, het meten van het energieverbruik van jouw softwarecomponent met behulp van een hardwareapparaat in het stopcontact. Of het gebruik van tellers op hardware die direct energieverbruik meten. Als je jouw eenheden direct kunt tellen, moet je de measurement aanpak gebruiken.
+- **Calculation** omvat indirect tellen, vaak met behulp van een model van een bepaalde vorm. Als je bijvoorbeeld het energieverbruik van jouw applicatie niet direct kunt meten maar in plaats daarvan een model hebt dat het energieverbruik schat op basis van het CPU-gebruik, wordt dit beschouwd als calculation in plaats van measurement.
+
+Deze bronnen kunnen je helpen om te beslissen over measurement en calculation methoden:
+
+- Bekijk het [Software Carbon Intensity Guide](https://sci-guide.greensoftware.foundation/) project. Dit project is verantwoordelijk voor het geven van advies over hoe je de emissies van verschillende softwarecomponenten kunt kwantificeren.
+
+4. Kwantificeer
+
+Nu ben je klaar om te beginnen. Gebruik de methodologie die in de vorige stappen is beschreven, begin met het kwantificeren van de SCI score voor elk softwarecomponent binnen jouw grens. Jouw totale SCI score van jouw softwareapplicatie is de gecombineerde score van al de verschillende componenten.
+
+Je kunt meerdere SCI scores berekenen voor dezelfde applicatie. De SCI score is nuttige informatie om te begrijpen hoe jouw applicatie zich gedraagt met betrekking tot carbon emissions in verschillende scenario's. Een streaming applicatie kan bijvoorbeeld carbon per minuut als metriek kiezen. Het kan ook de carbon per gebruiker per dag berekenen. De carbon per $ omzet metriek kan een andere nuttige dimensie geven.
+
+## Samenvatting
+
+- Het GHG protocol is een metriek voor het meten van de totale carbon emissions van een organisatie en wordt gebruikt door organisaties over de hele wereld.
+- Het GHG protocol verdeelt carbon emissions in drie scopes. Scope 3, ook bekend als value chain emissions, verwijst naar de emissies van organisaties die anderen in een keten bevoorraden. Op deze manier zullen de scope 1 en 2 van een organisatie optellen tot de scope 3 van een andere organisatie.
+- Het berekenen van software-gedreven emissies met behulp van het GHG protocol is mogelijk maar kan moeilijk zijn voor open-source software.
+- De SCI is een metriek die specifiek is ontworpen om software emissies te berekenen en is een mate in plaats van een totaal.
+- De functional unit van meting is niet voorgeschreven in de SCI en je moet iets kiezen dat jouw applicatie weerspiegelt.
+
+## Quiz
+
+<Quiz
+  QuizList={[
+    {
+      question:
+        "Hoe vraagt het Greenhouse Gas protocol ons om emissies te meten?",
+      answers: [
+        {
+          text: "Door emissies te verdelen in drie scopes",
+          isCorrect: true,
+        },
+        {
+          text: "Door emissies te verdelen in embodied carbon en dagelijkse emissies",
+          isCorrect: false,
+        },
+        {
+          text: "Door emissies te verdelen van applicaties die draaien op de public cloud en de private cloud",
+          isCorrect: false,
+        },
+      ],
+    },
+    {
+      question:
+        "Welke van de 3 scopes die worden gebruikt in het GHG protocol staat ook bekend als 'value chain emissions'?",
+      answers: [
+        {
+          text: "1",
+          isCorrect: false,
+        },
+        {
+          text: "2",
+          isCorrect: false,
+        },
+        {
+          text: "3",
+          isCorrect: true,
+        },
+        {
+          text: "1 en 2",
+          isCorrect: false,
+        },
+        {
+          text: "alle bovenstaande",
+          isCorrect: false,
+        },
+      ],
+    },
+    {
+      question:
+        "Als je een cloud applicatie bent, in welke GHG scope valt jouw energieverbruik?",
+      answers: [
+        {
+          text: "Scopes 2 en 3",
+          isCorrect: false,
+        },
+        {
+          text: "Scope 2",
+          isCorrect: false,
+        },
+        {
+          text: "Scope 3",
+          isCorrect: false,
+        },
+        {
+          text: "Hangt af of het public, private of hybrid is",
+          isCorrect: true,
+        },
+      ],
+    },
+    {
+      question:
+        "Welk van de volgende scenario's is meer uitdagend om te meten met behulp van het GHG protocol?",
+      answers: [
+        {
+          text: "Closed-source software",
+          isCorrect: false,
+        },
+        {
+          text: "Open-source software",
+          isCorrect: true,
+        },
+        {
+          text: "Beide bovenstaande",
+          isCorrect: false,
+        },
+      ],
+    },
+    {
+      question: "Waar staat het acroniem SCI voor?",
+      answers: [
+        {
+          text: "Software Carbon Index",
+          isCorrect: false,
+        },
+        {
+          text: "Software Carbon Intensity",
+          isCorrect: true,
+        },
+        {
+          text: "Specific Carbon Intensity",
+          isCorrect: false,
+        },
+      ],
+    },
+    {
+      question: "Wat vertegenwoordigt ((E*I) + M) in de SCI vergelijking?",
+      answers: [
+        {
+          text: "Carbon",
+          isCorrect: true,
+        },
+        {
+          text: "Energy",
+          isCorrect: false,
+        },
+        {
+          text: "Carbon intensity",
+          isCorrect: false,
+        },
+      ],
+    },
+    {
+      question: "Wat vertegenwoordigt de 'R' in de SCI vergelijking?",
+      answers: [
+        {
+          text: "Repetition",
+          isCorrect: false,
+        },
+        {
+          text: "Rate",
+          isCorrect: false,
+        },
+        {
+          text: "Functional unit",
+          isCorrect: true,
+        },
+      ],
+    },
+    {
+      question:
+        "Wat zijn de belangrijkste dingen om te overwegen voordat je jouw SCI score berekent?",
+      answers: [
+        {
+          text: "Wat op te nemen en de functional unit die je gaat gebruiken",
+          isCorrect: false,
+        },
+        {
+          text: "Wat op te nemen, de functional unit die je gaat gebruiken en methode van kwantificatie",
+          isCorrect: true,
+        },
+        {
+          text: "Wat op te nemen, de functional unit die je gaat gebruiken, methode van kwantificatie en GHG score",
+          isCorrect: false,
+        },
+      ],
+    },
+  ]}
+/>

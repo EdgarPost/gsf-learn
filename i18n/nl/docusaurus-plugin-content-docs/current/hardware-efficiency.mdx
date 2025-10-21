@@ -1,0 +1,208 @@
+---
+sidebar_position: 6
+---
+
+import Quiz from "/src/components/Quiz";
+
+# Hardware Efficiency
+
+:::tip Principe
+
+_Gebruik zo min mogelijk embodied carbon._
+
+:::
+
+## Introductie
+
+De hardware die gebruikt wordt in het proces van het ontwikkelen van jouw software is een belangrijk element om te overwegen voor een Green Software praktijkbeoefenaar.
+
+Je zult zien hoe embodied carbon (belichaamde koolstof) een verborgen kostenpost is als het gaat om hardware en welke verschillende maatregelen je kunt nemen om de impact te verminderen die de creatie, vernietiging en het gebruik van deze hardware met zich meebrengt. Bijvoorbeeld door de levensduur te verlengen of over te stappen op cloudservers.
+
+## Kernconcepten
+
+### Embodied carbon
+
+Het apparaat dat je gebruikt om dit te lezen heeft koolstof uitgestoten toen het werd geproduceerd en zodra het het einde van zijn levensduur bereikt, kan het weggooien ervan nog meer uitstoot veroorzaken. Embodied carbon (ook wel "embedded carbon" genoemd) is de hoeveelheid koolstofvervuiling die wordt uitgestoten tijdens de creatie en verwijdering van een apparaat.
+
+Bij het berekenen van de totale koolstofvervuiling voor computers die software draaien, moet zowel de koolstofvervuiling die gepaard gaat met het draaien van de computer als de embodied carbon van de computer worden meegenomen.
+
+![alt_text](./images/17_embodioed_carbon.png "image_tooltip")
+
+Embodied carbon verschilt aanzienlijk tussen apparaten voor eindgebruikers. Voor sommige apparaten is de uitstoot tijdens de productie veel hoger dan de uitstoot tijdens het gebruik, zoals geïllustreerd in een [studie](https://www.ifi.uzh.ch/dam/jcr:fa4e956e-7a53-4038-98a5-00e09e2f4303/Study_Digitalization_Climate_Protection_Summary_Oct2017.pdf) van de Universiteit van Zürich. Als gevolg hiervan kunnen de embodied carbon kosten soms veel hoger zijn dan de koolstofkosten van de elektriciteit die het apparaat van energie voorziet.
+
+Door te denken in termen van embodied carbon, is elk apparaat, zelfs een apparaat dat geen elektriciteit verbruikt, verantwoordelijk voor de uitstoot van koolstof gedurende zijn levensduur.
+
+### Afschrijving
+
+Een manier om embodied carbon te verantwoorden is door de koolstof af te schrijven over de verwachte levensduur van een apparaat. Stel bijvoorbeeld dat het 4000kg CO2eq kostte om een server te bouwen, en we verwachten dat deze vier jaar meegaat. Afschrijving betekent dat we kunnen zeggen dat de server 1000kg CO2eq/jaar uitstoot.
+
+![alt_text](./images/18_amortization.png "image_tooltip")
+
+## Hoe je hardware efficiency kunt verbeteren
+
+Als we de embodied carbon meenemen, is het duidelijk dat tegen de tijd dat we een computer kopen, deze al een aanzienlijke hoeveelheid koolstof heeft uitgestoten. Computers hebben ook een beperkte levensduur, wat betekent dat ze uiteindelijk niet meer in staat zijn om moderne workloads aan te kunnen en vervangen moeten worden. In deze termen is hardware een indicator voor koolstof, en aangezien ons doel is om koolstofefficient te zijn, moeten we ook hardware-efficient zijn.
+
+Er zijn twee belangrijke benaderingen voor hardware efficiency:
+
+- Voor apparaten van eindgebruikers is het **de levensduur van de hardware verlengen**.
+- Voor cloud computing is het **het verhogen van het gebruik** van het apparaat.
+
+### De levensduur van hardware verlengen
+
+In het voorbeeld dat we eerder zagen, als we slechts één jaar kunnen toevoegen aan de levensduur van onze server, daalt de afgeschreven koolstof van 1000kg CO2eq/jaar naar 800kg CO2eq/jaar.
+
+![alt_text](./images/19_lifespan.png "image_tooltip")
+
+Hardware wordt afgevoerd wanneer het kapot gaat of moeite heeft om moderne workloads aan te kunnen. Natuurlijk zal hardware altijd uiteindelijk kapot gaan, maar als ontwikkelaars kunnen we software gebruiken om applicaties te bouwen die draaien op oudere hardware en de levensduur ervan verlengen.
+
+### Het verhogen van apparaatgebruik
+
+In de cloud-ruimte vertaalt hardware efficiency zich meestal naar een toename in het gebruik van servers. Het is beter om één server op 100% gebruik te draaien dan 5 servers op 20% gebruik vanwege de kosten van embodied carbon. Op dezelfde manier dat het bezitten van één auto en deze elke dag van de week gebruiken veel beter is dan er vijf bezitten en elke dag een andere gebruiken, is het veel efficiënter om servers op hun volledige capaciteit te gebruiken in plaats van meerdere onder hun capaciteit in te zetten. Hoewel de uitstoot hetzelfde is, is de embodied carbon die wordt gebruikt veel lager.
+
+![alt_text](./images/20_increasing_utilization.png "image_tooltip")
+
+De meest voorkomende reden voor het hebben van ondergebruikte servers is zodat er rekening wordt gehouden met piekcapaciteit. Servers draaien op 20% betekent dat je weet dat je pieken in de vraag aan kunt zonder dat dit de prestaties beïnvloedt. Maar ondertussen vertegenwoordigt al die reservecapaciteit die daar nutteloos staat verspilde embodied carbon. Hardware-efficient zijn betekent ervoor zorgen dat elk hardwareapparaat zo veel mogelijk wordt gebruikt voor zo lang mogelijk.
+
+Dit is een van de belangrijkste voordelen van de publieke cloud; je weet dat wanneer je moet opschalen, de ruimte er zal zijn om de slag op te vangen. Doordat meerdere organisaties gebruik maken van de publieke cloud, kan reservecapaciteit altijd beschikbaar worden gesteld aan degene die het nodig heeft, zodat er geen servers nutteloos staan.
+
+Het is belangrijk op te merken dat het simpelweg verplaatsen van operaties naar de publieke cloud niet automatisch je uitstoot zal verminderen. Het geeft je simpelweg de ruimte om je software opnieuw te architecturen zodat een vermindering mogelijk is.
+
+![alt_text](./images/21_private_vs_public_cloud.png "image_tooltip")
+
+## Samenvatting
+
+- Embodied carbon is de hoeveelheid koolstofvervuiling die wordt uitgestoten tijdens de creatie en verwijdering van een apparaat.
+- Bij het berekenen van je totale koolstofvervuiling moet je zowel rekening houden met de uitstoot bij het draaien van de computer als met de embodied carbon die geassocieerd is met de creatie en verwijdering ervan.
+- Het verlengen van de levensduur van een apparaat heeft als effect dat de uitgestoten koolstof wordt afgeschreven zodat de CO2eq/jaar wordt verminderd.
+- Cloud computing is energie-efficiënter dan een on-premise server omdat het zowel demand shifting als demand shaping kan toepassen.
+
+## Quiz
+
+<Quiz
+  QuizList={[
+    {
+      question: "Wat is embodied carbon?",
+      answers: [
+        {
+          text: "De koolstof die werd uitgestoten bij het maken van een apparaat",
+          isCorrect: false,
+        },
+        {
+          text: "De koolstofuitstoot geassocieerd met zowel de creatie als verwijdering van een apparaat",
+          isCorrect: true,
+        },
+        {
+          text: "De koolstofuitstoot geassocieerd met de verwijdering van een apparaat",
+          isCorrect: false,
+        },
+      ],
+    },
+    {
+      question: "Wat bepaalt de totale koolstofvervuiling van een computer?",
+      answers: [
+        {
+          text: "De embodied carbon van het apparaat",
+          isCorrect: false,
+        },
+        {
+          text: "De uitstoot geproduceerd tijdens het draaien van het apparaat",
+          isCorrect: false,
+        },
+        {
+          text: "Beide bovenstaande",
+          isCorrect: true,
+        },
+      ],
+    },
+    {
+      question:
+        "Wat zijn de twee belangrijkste manieren om efficiënter met hardware om te gaan?",
+      answers: [
+        {
+          text: "De levensduur verlengen en het gebruik verminderen",
+          isCorrect: false,
+        },
+        {
+          text: "De levensduur verlengen en het gebruik verhogen",
+          isCorrect: true,
+        },
+        {
+          text: "De levensduur verkorten en het gebruik verhogen",
+          isCorrect: false,
+        },
+      ],
+    },
+    {
+      question:
+        "Hoe beïnvloedt hardware efficiency de koolstofvervuiling van een apparaat?",
+      answers: [
+        {
+          text: "Het elimineert deze",
+          isCorrect: false,
+        },
+        {
+          text: "Het verhoogt deze",
+          isCorrect: false,
+        },
+        {
+          text: "Het vermindert deze",
+          isCorrect: true,
+        },
+      ],
+    },
+    {
+      question:
+        "Wat is de afgeschreven koolstof van een apparaat met een embodied carbon van 1000kg CO2eq en een levensduur van 5 jaar?",
+      answers: [
+        {
+          text: "200kg CO2eq/jaar",
+          isCorrect: true,
+        },
+        {
+          text: "20kg CO2eq/jaar",
+          isCorrect: false,
+        },
+        {
+          text: "200kg CO2eq",
+          isCorrect: false,
+        },
+      ],
+    },
+    {
+      question:
+        "Wat zijn enkele van de verschillen tussen het hebben van je servers op een publieke cloud vergeleken met een privécloud?",
+      answers: [
+        {
+          text: "Op de publieke cloud kun je snel opschalen",
+          isCorrect: false,
+        },
+        {
+          text: "Op een privécloud moet je servers onder capaciteit laten draaien om pieken in de vraag op te kunnen vangen",
+          isCorrect: false,
+        },
+        {
+          text: "Beide bovenstaande zijn waar",
+          isCorrect: true,
+        },
+      ],
+    },
+    {
+      question:
+        "Waarom is het zo belangrijk om embodied carbon mee te nemen bij het berekenen van uitstoot voor hardware?",
+      answers: [
+        {
+          text: "Embodied carbon is soms verantwoordelijk voor meer uitstoot dan de uitstoot van de elektriciteit die het apparaat van energie voorziet",
+          isCorrect: true,
+        },
+        {
+          text: "Embodied carbon vertegenwoordigt een klein maar significant deel van de totale uitstoot van een apparaat",
+          isCorrect: false,
+        },
+        {
+          text: "Embodied carbon is de enige bron van uitstoot die overwogen moet worden bij het berekenen van totale uitstoot voor een apparaat?",
+          isCorrect: false,
+        },
+      ],
+    },
+  ]}
+/>

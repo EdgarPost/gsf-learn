@@ -1,0 +1,282 @@
+---
+sidebar_position: 5
+---
+
+import Quiz from "/src/components/Quiz";
+
+# Carbon Awareness
+
+:::tip Principe
+
+_Doe meer wanneer de elektriciteit schoner is en doe minder wanneer de elektriciteit vuiler is._
+
+:::
+
+## Introductie
+
+Niet alle elektriciteit wordt op dezelfde manier geproduceerd. Op verschillende locaties en tijdstippen wordt elektriciteit gegenereerd met behulp van verschillende bronnen met variërende koolstofemissies. Sommige bronnen, zoals wind, zon of waterkracht, zijn schone, hernieuwbare bronnen die weinig koolstof uitstoten. Aan de andere kant stoten fossiele brandstoffen in verschillende mate koolstof uit om elektriciteit te produceren. Zo stoten zowel gas als kolen meer koolstof uit dan hernieuwbare bronnen, maar gascentrales stoten minder koolstof uit dan kolencentrales.
+
+Carbon awareness is het idee om meer te doen wanneer meer energie uit koolstofarme bronnen komt en minder te doen wanneer meer energie uit koolstofrijke bronnen komt.
+
+## Kernconcepten
+
+### Carbon intensity
+
+Carbon intensity meet hoeveel koolstof (CO2e) wordt uitgestoten per kilowattuur (kWh) verbruikte elektriciteit. De standaardeenheid van carbon intensity is gCO2eq/kWh, oftewel gram koolstof per kilowattuur.
+
+Als je computer direct is aangesloten op een windmolenpark, zou de elektriciteit een carbon intensity van 0 gCO2eq/kWh hebben, omdat een windmolenpark geen koolstof uitstoot om die elektriciteit te produceren. De meeste mensen kunnen echter niet direct aansluiten op windmolenparken; in plaats daarvan sluiten ze aan op elektriciteitsnetwerken die worden gevoed met elektriciteit uit verschillende bronnen.
+
+Eenmaal aangesloten op een netwerk kun je niet bepalen welke bronnen de elektriciteit leveren die je gebruikt; je krijgt simpelweg een mix van alles. Je carbon intensity zal dus een mix zijn van alle huidige energiebronnen in een netwerk, zowel de bronnen met lagere als hogere koolstofuitstoot.
+
+### Variabiliteit van carbon intensity
+
+Carbon intensity varieert per locatie, omdat sommige regio's een energiemix hebben die meer schone energiebronnen bevat dan andere.
+
+![alt_text](./images/07_variability_CI.png "image_tooltip")
+
+Carbon intensity verandert ook in de loop van de tijd door de inherente variabiliteit van hernieuwbare energie, veroorzaakt door de onvoorspelbaarheid van weersomstandigheden. Wanneer het bijvoorbeeld bewolkt is of de wind niet waait, neemt de carbon intensity toe omdat meer elektriciteit in je mix afkomstig is van bronnen die koolstof uitstoten.
+
+![alt_text](./images/08_variability_CI.png "image_tooltip")
+
+### Dispatchability & curtailment
+
+De vraag naar elektriciteit varieert gedurende de dag en het aanbod moet altijd aan die vraag kunnen voldoen. Een brownout (een daling van het voltage van de stroomleiding) treedt op als een energiebedrijf niet genoeg elektriciteit produceert om aan de vraag te voldoen. Omgekeerd, als een energiebedrijf meer elektriciteit produceert dan nodig is, slaan zekeringen door om te voorkomen dat de infrastructuur doorbrandt, en hebben we blackouts.
+
+Er moet te allen tijde een balans zijn tussen vraag en aanbod van elektriciteit en de verantwoordelijkheid hiervoor ligt meestal bij het energiebedrijf.
+
+In het geval van fossiele brandstoffen zoals kolen is het makkelijker om de geproduceerde energie voor dit aanbod te controleren; dit wordt **dispatchability** genoemd. In het geval van hernieuwbare energiebronnen zoals windmolenparken kan de geproduceerde energie echter niet gemakkelijk worden gecontroleerd (we kunnen niet bepalen hoeveel de wind waait). Als de energiebron meer elektriciteit produceert dan nodig is, wordt die elektriciteit weggegooid; dit wordt **curtailment** genoemd.
+
+### Marginal carbon intensity
+
+Als je plotseling meer stroom nodig hebt - bijvoorbeeld als je een lamp moet aanzetten - komt die energie uit de marginal power plant (marginale energiecentrale). De marginal power plant is dispatchable, wat betekent dat marginal power plants vaak worden aangedreven door fossiele brandstoffen.
+
+Marginal carbon intensity is de carbon intensity van de energiecentrale die zou moeten worden ingezet om aan nieuwe vraag te voldoen.
+
+Met fossiele brandstoffen aangedreven centrales schalen zelden terug naar 0. Ze hebben een minimum functioneringsdrempel en sommige schalen niet; ze worden beschouwd als een consistente, altijd-aan baseload. Hierdoor hebben we soms het scenario waarin we hernieuwbare energie curtailen (weggooien) terwijl we nog steeds energie verbruiken van met fossiele brandstoffen aangedreven centrales.
+
+![alt_text](./images/09_marginal_CI.png "image_tooltip")
+
+In deze situaties zal de marginal carbon intensity 0 gCO2eq/kWh zijn, omdat we weten dat elke nieuwe vraag zal overeenkomen met de hernieuwbare energie die we aan het curtailen zijn.
+
+### Energy markets
+
+Het exacte marktmodel varieert over de hele wereld, maar volgt in grote lijnen hetzelfde model.
+
+Wanneer de vraag naar elektriciteit daalt, moeten energiebedrijven het aanbod **verminderen** om vraag en aanbod in evenwicht te brengen. Ze kunnen dit op twee manieren doen:
+
+1. **Minder energie kopen van fossiele brandstofcentrales.**
+
+![alt_text](./images/10_marginal_CI.png "image_tooltip")
+Energie van fossiele brandstofcentrales is meestal het duurste, dus dit is de voorkeursmethode. Dit vertaalt zich direct naar het verbranden van minder fossiele brandstoffen.
+
+2. **Minder energie kopen van hernieuwbare bronnen**.
+   Hernieuwbare bronnen zijn het goedkoopst, dus ze vermijden dit liever. Als een hernieuwbare bron niet al zijn elektriciteit kan verkopen, moet het de rest weggooien.
+
+Het verminderen van de hoeveelheid elektriciteit die wordt verbruikt in je applicaties kan helpen de carbon intensity van de energie te verlagen, aangezien het eerste wat wordt teruggeschaald fossiele brandstoffen zijn.
+
+Wanneer de vraag naar elektriciteit stijgt, moeten energiebedrijven het aanbod verhogen om vraag en aanbod in evenwicht te brengen. Ze kunnen dit op twee manieren doen:
+
+1. **Meer energie kopen van hernieuwbare bronnen die momenteel worden gecurtailed**
+
+![alt_text](./images/11_marginal_CI.png "image_tooltip")
+
+Als je aan het curtailen bent, betekent dit dat je overtollige energie hebt die je zou kunnen dispatchen. Hernieuwbare energie is al het goedkoopst, dus gecurtailede hernieuwbare energie zal de goedkoopste dispatchable energiebron zijn. Hernieuwbare centrales zullen dan de energie verkopen die ze anders hadden moeten curtailen.
+
+2. **Meer energie kopen van fossiele brandstofcentrales**.
+
+![alt_text](./images/12_marginal_CI.png "image_tooltip")
+
+Fossiele brandstoffen zijn inherent dispatchable; ze kunnen snel de energieproductie verhogen door meer te verbranden. Kolen kosten echter geld, dus dit is de minst geprefereerde oplossing.
+
+Energy markets behoren tot de meest complexe markten ter wereld, dus de bovenstaande uitleg is een vereenvoudiging. Maar wat belangrijk is om te begrijpen is dat ons doel is om investeringen in koolstofarme energiebronnen, zoals hernieuwbare energie, te verhogen en investeringen in koolstofrijke bronnen, zoals kolen, te verminderen. De beste manier om ervoor te zorgen dat geld in de juiste richting stroomt, is ervoor te zorgen dat je elektriciteit gebruikt met de laagste carbon intensity.
+
+## Hoe je meer carbon aware kunt zijn
+
+:::tip
+
+Elektriciteit gebruiken wanneer de carbon intensity laag is, is de beste manier om ervoor te zorgen dat investeringen stromen naar centrales met lage koolstofuitstoot en weg van centrales met hoge koolstofuitstoot.
+
+:::
+
+![alt_text](./images/13_carbon_aware.png "image_tooltip")
+
+Er vindt momenteel een wereldwijde transformatie plaats. Over de hele wereld veranderen elektriciteitsnetwerken van voornamelijk het verbranden van fossiele brandstoffen naar het verkrijgen van energie uit koolstofarme bronnen zoals wind en zon. Dit is een van onze beste hoop om onze mondiale reductiedoelstellingen te halen. Laten we als green software practitioners eens kijken naar enkele manieren waarop we kunnen helpen die transitie te versnellen.
+
+De primaire drijfveer voor de transitie is economisch in plaats van een duurzaamheidsdoel. Hernieuwbare energiebronnen winnen omdat ze goedkoper zijn en in de loop van de tijd nog betaalbaarder worden. Om de transitie te helpen versnellen, moeten we hernieuwbare centrales winstgevender maken en fossiele brandstofcentrales minder winstgevend. De beste manier om dat te doen is om meer elektriciteit te gebruiken wanneer deze afkomstig is van koolstofarme bronnen zoals hernieuwbare energie en minder elektriciteit wanneer deze afkomstig is van koolstofrijke bronnen.
+
+Carbon intensity is lager wanneer meer energie afkomstig is van koolstofarme bronnen en hoger wanneer deze afkomstig is van koolstofrijke bronnen.
+
+### Demand shifting
+
+Carbon aware zijn betekent reageren op verschuivingen in carbon intensity door je vraag te verhogen of te verlagen. Als je werk je de flexibiliteit biedt om te bepalen wanneer en waar je workloads uitvoert, kun je dienovereenkomstig verschuiven - elektriciteit verbruiken wanneer de carbon intensity lager is en de productie pauzeren wanneer deze hoger is. Bijvoorbeeld het trainen van een Machine Learning-model op een ander tijdstip of in een andere regio met een veel lagere carbon intensity.
+
+[Studies](https://ieeexplore.ieee.org/document/6128960) tonen aan dat deze acties kunnen resulteren in 45% tot 99% koolstofreductie, afhankelijk van het aantal hernieuwbare energiebronnen die het netwerk voeden.
+
+Demand shifting kan verder worden opgedeeld in spatial en temporal shifting.
+
+#### Spatial shifting
+
+Spatial shifting betekent het verplaatsen van je berekening naar een andere fysieke locatie waar de huidige carbon intensity lager is. Het kan een regio zijn die van nature koolstofarme energiebronnen heeft. Bijvoorbeeld verplaatsen naar verschillende hemisferen, afhankelijk van het seizoen, voor meer zonuren.
+
+![alt_text](./images/14_spatial_shifting.png "image_tooltip")
+
+#### Temporal shifting
+
+Als je je berekening niet spatial naar een andere regio kunt verschuiven, is een andere optie om naar een ander tijdstip te verschuiven. Misschien later op de dag of 's nachts wanneer het zonniger of windiger is en daardoor de carbon intensity lager is. Dit wordt temporal demand shifting genoemd. We kunnen toekomstige carbon intensity redelijk goed voorspellen dankzij vooruitgang in weersvoorspelling.
+
+![alt_text](./images/15_temporal_shifting.png "image_tooltip")
+
+Enkele van de grootste technologiebedrijven hebben het belang van carbon awareness erkend en gebruiken geavanceerde modelleringstechnieken om demand shifting te implementeren.
+
+- **Google Carbon Aware Data Centers** - Google lanceerde een project om [sommige cloudworkloads carbon aware te maken](https://blog.google/outreach-initiatives/sustainability/carbon-aware-computing-location/). Ze creëerden modellen om de carbon intensity en workload van morgen te voorspellen. Vervolgens vormden ze grootschalige workloads zo dat er meer zou gebeuren wanneer en waar de carbon intensity het laagst is, maar op zo'n manier dat ze nog steeds de verwachte belasting aankunnen.
+- **Microsoft Carbon Aware Windows** - [Microsoft kondigde een project aan om Windows 11 duurzamer te maken](https://www.techradar.com/news/windows-11-is-getting-an-eco-friendly-update-but-could-microsoft-do-more). In eerste instantie betekent dit het uitvoeren van Windows-updates wanneer de carbon intensity lager is.
+
+### Demand shaping
+
+Demand shifting is de strategie om berekeningen te verplaatsen naar regio's of tijdstippen wanneer de carbon intensity het laagst is. Demand shaping is een vergelijkbare strategie. In plaats van de vraag naar een andere regio of tijd te verplaatsen, passen we echter onze berekening aan om overeen te komen met het bestaande aanbod.
+
+![alt_text](./images/16_demand_shaping.png "image_tooltip")
+
+- Als de carbon intensity laag is, verhoog dan de vraag; doe meer in je applicaties.
+- Als de carbon intensity hoog is, verlaag dan de vraag; doe minder in je applicaties.
+
+Demand shaping voor carbon-aware applicaties draait helemaal om het aanbod van koolstof. Wanneer de koolstofkosten van het uitvoeren van je applicatie hoog worden, pas dan de vraag aan om overeen te komen met het aanbod van koolstof. Dit kan automatisch gebeuren of de gebruiker kan een keuze maken.
+
+Eco-modus is een voorbeeld van demand shaping. Eco-modi vind je in alledaagse apparaten zoals auto's of wasmachines. Wanneer geactiveerd, wordt een deel van de prestaties opgeofferd om minder resources (benzine of elektriciteit) te verbruiken. Omdat er een afweging is met prestaties, worden eco-modi altijd aan de gebruiker gepresenteerd als een keuze.
+
+Softwareapplicaties kunnen ook eco-modi hebben die - automatisch of met toestemming van de gebruiker - beslissingen kunnen nemen om koolstofemissies te verminderen.
+
+Een voorbeeld hiervan is videoconferentiesoftware die de streamingkwaliteit automatisch aanpast. In plaats van altijd op de hoogst mogelijke kwaliteit te streamen, vermindert het de videokwaliteit om audio prioriteit te geven wanneer de bandbreedte laag is.
+
+Een ander voorbeeld is TCP/IP. De overdrachtssnelheid neemt toe als reactie op hoeveel data over de kabel wordt uitgezonden.
+
+Een derde voorbeeld is progressive enhancement met het web. De webervaring verbetert afhankelijk van de resources en bandbreedte die beschikbaar zijn op het apparaat van de eindgebruiker.
+
+Demand shaping is gerelateerd aan een breder concept in duurzaamheid, namelijk het verminderen van consumptie. We kunnen veel bereiken door efficiënter om te gaan met resources, maar we moeten ook op een gegeven moment minder consumeren.
+
+Als Green Software practitioners zouden we overwegen een proces te annuleren wanneer de carbon intensity hoog is in plaats van demand shifting - het verminderen van de eisen van onze applicatie en de verwachtingen van onze eindgebruikers.
+
+## Samenvatting
+
+- Carbon awareness betekent begrijpen dat de energie die je verbruikt niet altijd dezelfde impact heeft in termen van carbon intensity.
+- Carbon intensity varieert afhankelijk van de tijd en plaats waar het wordt verbruikt.
+- De aard van fossiele brandstoffen en hernieuwbare energiebronnen betekent dat het verbruiken van energie wanneer de carbon intensity laag is, de vraag naar hernieuwbare energiebronnen verhoogt en het percentage hernieuwbare energie in het aanbod verhoogt.
+- Demand shifting betekent het verplaatsen van je energieverbruik naar verschillende locaties of tijdstippen van de dag waar de carbon intensity lager is.
+- Demand shaping betekent het aanpassen van je energieverbruik rond de variabiliteit van carbon intensity om meer te verbruiken in periodes van lage intensiteit en minder in periodes van hoge intensiteit.
+
+## Quiz
+
+<Quiz
+  QuizList={[
+    {
+      question: "Wat is carbon intensity?",
+      answers: [
+        {
+          text: "De hoeveelheid koolstof die wordt geproduceerd met behulp van schone energiebronnen",
+          isCorrect: false,
+        },
+        {
+          text: "De hoeveelheid koolstof die wordt geproduceerd per kilowattuur",
+          isCorrect: true,
+        },
+        { text: "0gCO2eq/kWh", isCorrect: false },
+      ],
+    },
+    {
+      question: "Wat is de standaardeenheid van carbon intensity?",
+      answers: [
+        { text: "gCO2eq/kWh", isCorrect: false },
+        { text: "gCO2e/kWh", isCorrect: false },
+        { text: "Een van beide bovenstaande", isCorrect: true },
+      ],
+    },
+    {
+      question: "Welke twee variabelen beïnvloeden carbon intensity?",
+      answers: [
+        { text: "Locatie en tijd", isCorrect: true },
+        { text: "Aanbod en vraag", isCorrect: false },
+        { text: "Tijd en vraag", isCorrect: false },
+      ],
+    },
+    {
+      question:
+        "Wat van het volgende is niet waar over marginal power plants?",
+      answers: [
+        { text: "Ze zijn dispatchable", isCorrect: false },
+        { text: "Ze verbranden meestal fossiele brandstoffen", isCorrect: false },
+        {
+          text: "Ze bevinden zich op plaatsen waar schone energiebronnen niet beschikbaar zijn",
+          isCorrect: true,
+        },
+      ],
+    },
+    {
+      question: "Wat is curtailment?",
+      answers: [
+        { text: "Overschot aan energieaanbod", isCorrect: false },
+        {
+          text: "Energie die wordt weggegooid vanwege overaanbod",
+          isCorrect: true,
+        },
+        { text: "Het verminderen van aanbod om aan vraag te voldoen", isCorrect: false },
+      ],
+    },
+    {
+      question:
+        "Wat van het volgende is geen voorbeeld van carbon aware computing?",
+      answers: [
+        {
+          text: "Meer elektriciteit verbruiken wanneer de carbon intensity lager is",
+          isCorrect: false,
+        },
+        { text: "Overschakelen op hernieuwbare energie", isCorrect: true },
+        {
+          text: "De productie pauzeren wanneer carbon intensity hoger is",
+          isCorrect: false,
+        },
+      ],
+    },
+    {
+      question: "Wat zijn de twee soorten demand shifting?",
+      answers: [
+        { text: "Temporal en permanent", isCorrect: false },
+        { text: "Spatial en temporal", isCorrect: true },
+        { text: "Curtailment en dispatchability", isCorrect: false },
+      ],
+    },
+    {
+      question: "Wat is demand shaping?",
+      answers: [
+        {
+          text: "Doe meer wanneer carbon intensity laag is, doe minder wanneer carbon intensity hoog is",
+          isCorrect: true,
+        },
+        {
+          text: "Doe meer wanneer carbon intensity hoog is, doe minder wanneer carbon intensity laag is",
+          isCorrect: false,
+        },
+        {
+          text: "Doe meer wanneer kosten laag zijn, doe minder wanneer kosten hoog zijn",
+          isCorrect: false,
+        },
+      ],
+    },
+    {
+      question: "Wat van het volgende is een voorbeeld van carbon awareness?",
+      answers: [
+        {
+          text: "Een stuk software maken dat zeer lage emissies produceert",
+          isCorrect: false,
+        },
+        {
+          text: "Een proces annuleren wanneer je weet dat de carbon intensity hoog is",
+          isCorrect: true,
+        },
+        {
+          text: "Cloudservers gebruiken in plaats van in-house servers",
+          isCorrect: false,
+        },
+      ],
+    },
+  ]}
+/>
