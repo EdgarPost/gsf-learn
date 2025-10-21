@@ -21,7 +21,7 @@ const config = {
   deploymentBranch: "gh-pages",
   i18n: {
     defaultLocale: "en",
-    locales: ["en","it"],
+    locales: ["en","de","es","fr-FR","it","pt-BR","zh-CN","ja-JP"]
   },
 
   presets: [
@@ -68,13 +68,13 @@ const config = {
           position: 'left',
         },
         {
-          href: "https://grnsft.org/practitioner/lf-exam",
+          href: "https://grnsft.org/mov-plat-gsp",
           position: "right",
-          label: "Take the exam",
+          label: "Take the Course",
         }, {
           href: "https://greensoftware.foundation/",
           position: "right",
-          label: "a Green Software Foundation project",
+          label: "Green Software Foundation",
         },],
       },
       footer: {
@@ -82,7 +82,7 @@ const config = {
         links: [{
           title: "Links",
           items: [{
-            label: "Github",
+            label: "GitHub",
             href: "https://github.com/Green-Software-Foundation/training/",
           },
           {
